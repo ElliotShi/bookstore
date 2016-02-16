@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>shop</title>
+		<meta charset="UTF-8" />
+		<link href="src/css/index.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="left" id="left">
+				<div class="goodinfo" id="goodinfo">
+					<img class="close" src="src/image/close.png" onclick="closeBox()"/>
+					<div id="nonedit" style="display:block">
+						<img id="infoimg"/>
+						<div id="topinfo">
+							<p>Title: <span id="infotitle"></span></p>
+							<p>Author: <span id="infoauthor"></span></p>
+							<p>Price: <span id="infoprice"></span></p>
+							<p class="infodesc">Description: <span id="infodesc"></span></p>
+						</div>
+						<div class="tools" id="tools">
+							<img id="edit" alt="Edit" src="src/image/edit.png" onclick="editBook()" />
+							<img id="delete" alt="Delete" src="src/image/delete.png" onclick="deleteBook()" />
+						</div>						
+					</div>
+					<div id="foredit" style="display:none">
+						<textarea id="editimg" type="text" placeholder="Image" ></textarea>
+						<div id="editcontent">
+							<label for="edittitle">
+								Title
+								<input id="edittitle" type="text" />
+							</label>
+							<label for="editauthor">
+								Author
+								<input id="editauthor" type="text" />
+							</label>
+							<label for="editprice">
+								Price
+								<input id="editprice" type="text" />
+							</label>
+							<label for="editdesc" id="editdesclabel">
+								Description
+								<textarea id="editdesc" type="text" ></textarea>
+							</label>
+						</div>
+						<div class="tools" id="tools">
+							<img id="update" alt="Update" src="src/image/update.png" onclick="updateBook()" />
+							<img id="cancel" alt="Cancel" src="src/image/cancel.png" onclick="cancelEdit()" />
+						</div>
+					</div>
+				</div>
+				<div id="searchtip">
+					<p id="p1">Below is the search result. Click <a href="#" onclick="showBooks()">show all</a> to see all.</p>
+					<p id="p2">Sorry, we do not have this book so far. Click <a href="#" onclick="showBooks()">show all</a> to see all.</p>
+				</div>
+				<div id="list"></div>
+			</div>
+			<hr />
+			<div class="right">
+				<div class="search">
+					<input type="text" id="search" placeholder="please input title or author to search"/>
+					<button onclick="searchBook()">Search</button>
+				</div>
+<!-- 				<div class="result">
+					<div>
+						<img src="" />
+						<div>
+							<p>Title: This is the book name</p>
+							<p>Author: Someone</p>
+							<p>Price: $10.00</p>
+							<p>Description: balabalabala</p>
+						</div>
+					</div>				
+				</div> -->
+				<div class="create">
+					<label for="bookTitle">
+						Title
+						<input id="bookTitle" type="text" />
+					</label>
+					<label for="bookAuthor">
+						Author
+						<input id="bookAuthor" type="text" />
+					</label>
+					<label for="bookPrice">
+						Price
+						<input id="bookPrice" type="text" />
+					</label>
+					<label for="bookImage">
+						Image
+						<input id="bookImage" type="text" />
+					</label>
+					<label for="bookDesc">
+						Description
+						<textarea id="bookDesc"></textarea>
+					</label>
+					<button class="addbook" onclick="createBook('bookTitle','bookAuthor', 'bookPrice', 'bookImage', 'bookDesc')">Add Book</button>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>		
+		<script src="src/js/itemModel.js"></script>
+		<script src="src/js/itemStoreModel.js"></script>
+		<script src="src/js/dao.js"></script>
+		<script src="src/js/layer.js"></script>
+	</body>
+</html>
